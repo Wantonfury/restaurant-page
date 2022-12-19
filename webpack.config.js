@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
 
 const config = {
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+    },
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: '[name].bundle.js',
+        filename: 'main.js',
         clean: true,
     },
     plugins: [
