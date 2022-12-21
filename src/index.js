@@ -9,19 +9,34 @@ class RestaurantManager {
     content = document.createElement('div');
     footer = document.createElement('div');
     
+    clearActive() {
+        this.home.classList.remove('active');
+        this.menu.classList.remove('active');
+        this.contact.classList.remove('active');
+    }
+    
     switchHome() {
-        content.innerHTML = "";
-        populateHome(content);
+        this.clearActive();
+        this.home.classList.add('active');
+        
+        this.content.innerHTML = "";
+        populateHome(this.content);
     }
     
     switchMenu() {
-        content.innerHTML = "";
-        populateMenu(content);
+        this.clearActive();
+        this.menu.classList.add('active');
+        
+        this.content.innerHTML = "";
+        populateMenu(this.content);
     }
     
     switchContact() {
-        content.innerHTML = "";
-        populateContact(content);
+        this.clearActive();
+        this.contact.classList.add('active');
+        
+        this.content.innerHTML = "";
+        populateContact(this.content);
     }
     
     populateHeader() {
@@ -42,25 +57,29 @@ class RestaurantManager {
         
         // Create the menu tabs
         const menuContainer = document.createElement('div');
-        const home = document.createElement('button');
-        const menu = document.createElement('button');
-        const contact = document.createElement('button');
+        this.home = document.createElement('button');
+        this.menu = document.createElement('button');
+        this.contact = document.createElement('button');
         
-        home.textContent = 'Home';
-        menu.textContent = 'Menu';
-        contact.textContent = 'Contact';
+        this.home.textContent = 'Home';
+        this.menu.textContent = 'Menu';
+        this.contact.textContent = 'Contact';
         
-        home.addEventListener('click', this.switchHome);
-        menu.addEventListener('click', this.switchMenu);
-        contact.addEventListener('click', this.switchContact);
+        this.home.addEventListener('click', this.switchHome.bind(this));
+        this.menu.addEventListener('click', this.switchMenu.bind(this));
+        this.contact.addEventListener('click', this.switchContact.bind(this));
         
-        home.classList.add('menu-btn');
-        menu.classList.add('menu-btn');
-        contact.classList.add('menu-btn');
+        this.home.classList.add('menu-btn');
+        this.menu.classList.add('menu-btn');
+        this.contact.classList.add('menu-btn');
+        
+        this.home.id = 'home';
+        this.menu.id = 'menu';
+        this.contact.id = 'contact';
         
         menuContainer.id = 'menu-container';
         
-        menuContainer.append(home, menu, contact);
+        menuContainer.append(this.home, this.menu, this.contact);
         
         header.appendChild(menuContainer);
     }
