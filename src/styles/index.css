@@ -66,13 +66,13 @@ body {
 }
 
 #logo span:first-child {
-    -webkit-text-stroke: 1px orange;
+    -webkit-text-stroke: 1px gold;
     -webkit-text-fill-color: white;
     font-style: italic;
 }
 
 #logo span:first-child + span {
-    color: orange;
+    color: gold;
 }
 
 #menu-container {
@@ -97,7 +97,7 @@ body {
     /*background-color: orange;*/
     background-color: black;
     
-    -webkit-text-stroke: 1px orange;
+    -webkit-text-stroke: 1px gold;
     -webkit-text-fill-color: white;
     
     font-weight: 700;
@@ -113,7 +113,7 @@ body {
     
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    border: 2px dotted orange;
+    border: 2px dotted gold;
     
     user-select: none;
     overflow: hidden;
@@ -128,7 +128,7 @@ body {
     bottom: -50%;
     left: 0;
     
-    background: orange;
+    background: gold;
     width: 100%;
     height: 100%;
     
@@ -158,7 +158,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     
-    background-color: orange;
+    background-color: gold;
     width: 100%;
     height: 100%;
 }
@@ -169,7 +169,7 @@ body {
     align-items: center;
     gap: 10px;
     
-    background-color: orange;
+    background-color: gold;
     height: 40px;
     width: 100%;
 }
