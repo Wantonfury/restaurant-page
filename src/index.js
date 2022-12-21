@@ -1,23 +1,30 @@
-import './style.css';
+import './styles/index.css';
+import populateHome from './pages/home.js';
+import populateMenu from './pages/menu.js';
+import populateContact from './pages/contact.js';
+import GitIcon from './img/github-mark.png';
 
 class RestaurantManager {
-    #header = document.createElement('div');
-    #content = document.createElement('div');
-    #footer = document.createElement('div');
+    header = document.createElement('div');
+    content = document.createElement('div');
+    footer = document.createElement('div');
     
-    #switchHome() {
-        console.log("Hello Home!");
+    switchHome() {
+        content.innerHTML = "";
+        populateHome(content);
     }
     
-    #switchMenu() {
-        console.log("Hello Menu!");
+    switchMenu() {
+        content.innerHTML = "";
+        populateMenu(content);
     }
     
-    #switchContact() {
-        console.log("Hello Contact!");
+    switchContact() {
+        content.innerHTML = "";
+        populateContact(content);
     }
     
-    #populateHeader() {
+    populateHeader() {
         // Create Bacon John logo
         const logo = document.createElement('h2');
         const logoLeft = document.createElement('span');
@@ -31,7 +38,7 @@ class RestaurantManager {
         logo.appendChild(logoLeft);
         logo.appendChild(logoRight);
         
-        this.#header.appendChild(logo);
+        header.appendChild(logo);
         
         // Create the menu tabs
         const menuContainer = document.createElement('div');
@@ -43,9 +50,9 @@ class RestaurantManager {
         menu.textContent = 'Menu';
         contact.textContent = 'Contact';
         
-        home.addEventListener('click', this.#switchHome);
-        menu.addEventListener('click', this.#switchMenu);
-        contact.addEventListener('click', this.#switchContact);
+        home.addEventListener('click', this.switchHome);
+        menu.addEventListener('click', this.switchMenu);
+        contact.addEventListener('click', this.switchContact);
         
         home.classList.add('menu-btn');
         menu.classList.add('menu-btn');
@@ -55,33 +62,41 @@ class RestaurantManager {
         
         menuContainer.append(home, menu, contact);
         
-        this.#header.appendChild(menuContainer);
+        header.appendChild(menuContainer);
     }
     
-    #populateFooter() {
+    populateFooter() {
+        const copyright = document.createElement('h6');
+        const icon = new Image();
         
+        copyright.textContent = 'Copyright © Wantonfury';
+        icon.src = GitIcon;
+        
+        footer.append(copyright, icon);
     }
     
-    #populateContent() {
+    populateContent() {
         
     }
     
     init() {
-        this.#populateHeader();
-        this.#populateContent();
-        this.#populateFooter();
+        this.populateHeader();
+        this.populateContent();
+        this.populateFooter();
+        
+        this.switchHome();
     }
     
     constructor() {
         const body = document.querySelector('body');
         
-        this.#header.id = 'header';
-        this.#content.id = 'content';
-        this.#footer.id = 'footer';
+        this.header.id = 'header';
+        this.content.id = 'content';
+        this.footer.id = 'footer';
         
-        body.appendChild(this.#header);
-        body.appendChild(this.#content);
-        body.appendChild(this.#footer);
+        body.appendChild(this.header);
+        body.appendChild(this.content);
+        body.appendChild(this.footer);
     }
 }
 
