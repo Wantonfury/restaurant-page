@@ -45,7 +45,7 @@ class RestaurantManager {
         const logoLeft = document.createElement('span');
         const logoRight = document.createElement('span');
         
-        logoLeft.textContent = 'BACON';
+        logoLeft.textContent = 'BURGER';
         logoRight.textContent = 'JOHN';
         
         logo.id = 'logo';
