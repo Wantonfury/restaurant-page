@@ -95,8 +95,9 @@ body {
     border: none;
     position: relative;
     /*background-color: orange;*/
+    background-color: black;
     
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px orange;
     -webkit-text-fill-color: white;
     
     font-weight: 700;
@@ -112,6 +113,7 @@ body {
     
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
+    border: 2px dotted orange;
     
     user-select: none;
     overflow: hidden;
