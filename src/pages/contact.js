@@ -1,9 +1,9 @@
 import '../styles/contact.css';
 
 export default function populateContact(content) {
-    const h2 = document.createElement('h2');
+    const contact = document.createElement('div');
     
-    h2.textContent = 'Hello contact!';
+    contact.id = 'contact-content';
     
-    content.appendChild(h2);
+    content.appendChild(contact);
 }

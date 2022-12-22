@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+html * {
+    font-family: sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -48,6 +52,10 @@ body {
         opacity: 1;
         transform: translateY(0%) translateX(0%);
     }
+}
+
+.fade-in {
+    animation: fade-in 0.5s;
 }
 
 #header {

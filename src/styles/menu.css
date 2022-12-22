@@ -12,10 +12,6 @@
     padding-bottom: 40px;
 }
 
-.fade-in {
-    animation: fade-in 0.5s;
-}
-
 .image {
     border-radius: 10%;
     border: 4px solid black;
