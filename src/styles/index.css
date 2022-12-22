@@ -192,13 +192,13 @@ body {
     width: 100%;
 }
 
-#footer > img {
+#footer img {
     max-width: 24px;
     max-height: 24px;
     
     transition: 200ms ease-in-out;
 }
 
-#footer > img:hover {
+#footer img:hover {
     transform: rotateZ(360deg);
 }

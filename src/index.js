@@ -86,12 +86,17 @@ class RestaurantManager {
     
     populateFooter() {
         const copyright = document.createElement('h6');
+        const link = document.createElement('a');
         const icon = new Image();
         
         copyright.textContent = 'Copyright © Wantonfury';
+        link.href = 'https://github.com/Wantonfury/restaurant-page';
+        link.rel = 'noreferrer noopener';
+        link.target = '_blank';
         icon.src = GitIcon;
         
-        footer.append(copyright, icon);
+        link.appendChild(icon);
+        footer.append(copyright, link);
     }
     
     init() {
