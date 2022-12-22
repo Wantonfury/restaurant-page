@@ -1,7 +1,7 @@
 import './styles/index.css';
 import populateHome from './pages/home.js';
 import populateMenu from './pages/menu.js';
-import populateContact from './pages/contact.js';
+import populateAbout from './pages/about.js';
 import GitIcon from './img/github-mark.png';
 
 class RestaurantManager {
@@ -12,7 +12,7 @@ class RestaurantManager {
     clearActive() {
         this.home.classList.remove('active');
         this.menu.classList.remove('active');
-        this.contact.classList.remove('active');
+        this.about.classList.remove('active');
     }
     
     switchHome() {
@@ -31,12 +31,12 @@ class RestaurantManager {
         populateMenu(this.content);
     }
     
-    switchContact() {
+    switchAbout() {
         this.clearActive();
-        this.contact.classList.add('active');
+        this.about.classList.add('active');
         
         this.content.innerHTML = "";
-        populateContact(this.content);
+        populateAbout(this.content);
     }
     
     populateHeader() {
@@ -59,27 +59,27 @@ class RestaurantManager {
         const menuContainer = document.createElement('div');
         this.home = document.createElement('button');
         this.menu = document.createElement('button');
-        this.contact = document.createElement('button');
+        this.about = document.createElement('button');
         
         this.home.textContent = 'Home';
         this.menu.textContent = 'Menu';
-        this.contact.textContent = 'Contact';
+        this.about.textContent = 'About';
         
         this.home.addEventListener('click', this.switchHome.bind(this));
         this.menu.addEventListener('click', this.switchMenu.bind(this));
-        this.contact.addEventListener('click', this.switchContact.bind(this));
+        this.about.addEventListener('click', this.switchAbout.bind(this));
         
         this.home.classList.add('menu-btn');
         this.menu.classList.add('menu-btn');
-        this.contact.classList.add('menu-btn');
+        this.about.classList.add('menu-btn');
         
         this.home.id = 'home';
         this.menu.id = 'menu';
-        this.contact.id = 'contact';
+        this.about.id = 'about';
         
         menuContainer.id = 'menu-container';
         
-        menuContainer.append(this.home, this.menu, this.contact);
+        menuContainer.append(this.home, this.menu, this.about);
         
         header.appendChild(menuContainer);
     }
@@ -94,16 +94,12 @@ class RestaurantManager {
         footer.append(copyright, icon);
     }
     
-    populateContent() {
-        
-    }
-    
     init() {
         this.populateHeader();
-        this.populateContent();
         this.populateFooter();
         
-        this.switchHome();
+        //this.switchHome();
+        this.switchAbout();
     }
     
     constructor() {
