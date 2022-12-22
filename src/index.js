@@ -99,7 +99,7 @@ class RestaurantManager {
         this.populateFooter();
         
         //this.switchHome();
-        this.switchAbout();
+        this.switchMenu();
     }
     
     constructor() {

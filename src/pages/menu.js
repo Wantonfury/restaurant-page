@@ -16,7 +16,8 @@ function createBurgerPresentation() {
     const burgerDescBody = document.createElement('p');
     
     burgerDescTitle.textContent = "Burger John's famous burgers!";
-    burgerDescBody.textContent = 'LadidadidaLadidadidaLadidadidaLadidadida LadidadidaLadidadidaLadidadidaLadidadidaLadidadida';
+    burgerDescBody.textContent = "Here you can find all of the famous burgers of Burger John. All of the personally tasted and approved\
+    by his excellent taste buds.";
     
     // Setup elements
     burgerImage.src = BurgerImage;
@@ -58,6 +59,7 @@ function createBurgerItems() {
     const burgerDesc2Body = document.createElement('p');
     const burgerDesc3Title = document.createElement('h4');
     const burgerDesc3Body = document.createElement('p');
+    const burgerDesc2Div = document.createElement('div');
     
     
     burgerImage1.src = Burger1;
@@ -73,18 +75,20 @@ function createBurgerItems() {
     burgerDesc1.append(burgerDesc1Title, burgerDesc1Body);
     burgerDesc1.classList.add('desc');
     
-    burgerDesc2.append(burgerDesc2Title, burgerDesc2Body);
     burgerDesc2.classList.add('desc', 'fade-in');
     burgerDesc2.style.width = '100%';
     burgerDesc2.style.height = '100%';
     burgerDesc2.style.backgroundImage = 'url(' + Burger2 + ')';
     burgerDesc2.style.backgroundSize = '100% 100%';
     
+    burgerDesc2Div.append(burgerDesc2Title, burgerDesc2Body);
+    burgerDesc2Div.classList.add('burger-2');
+    burgerDesc2.append(burgerDesc2Div);
     
     burgerDesc3.append(burgerDesc3Title, burgerDesc3Body);
     burgerDesc3.classList.add('desc');
     
-    for (const desc of [burgerDesc1, burgerDesc2, burgerDesc3]) {
+    for (const desc of [burgerDesc1, burgerDesc2Div, burgerDesc3]) {
         desc.firstChild.classList.add('desc-title', 'fade-in');
         desc.firstChild.style.animationDuration = '0.8s';
     
@@ -93,14 +97,14 @@ function createBurgerItems() {
     }
     
     // Set text for each item
-    burgerDesc1Title.textContent = 'Title 1';
-    burgerDesc1Body.textContent = 'Body 1';
+    burgerDesc1Title.textContent = 'Knife Burger';
+    burgerDesc1Body.textContent = "A famous burger with a sharp taste of steel and a dash of fries. Eat it very carefully.";
     
-    burgerDesc2Title.textContent = 'Title 2';
-    burgerDesc2Body.textContent = 'Body 2';
+    burgerDesc2Title.textContent = 'Bacon Burger';
+    burgerDesc2Body.textContent = "A burger so filled with bacon it will skyrocket your heart rate! Fries included so you, too, can cover your week's calories in one meal.";
     
-    burgerDesc3Title.textContent = 'Title 3';
-    burgerDesc3Body.textContent = 'Body 3';
+    burgerDesc3Title.textContent = 'Somewhat Vegan Burger';
+    burgerDesc3Body.textContent = 'A burger that has so much health in it it\'s almost vegan. Meat included.';
     
     burgerMenu.id = 'burger-menu';
     burgerMenu.append(burgerImage1, burgerDesc1, burgerDesc2, burgerImage3, burgerDesc3);

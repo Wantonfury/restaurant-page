@@ -61,9 +61,14 @@
     width: 1000px;
     padding-left: 40px;
     border-radius: 6%;
+    
 }
 
 #burger-menu img {
     border: 4px solid black;
     border-radius: 10%;
+}
+
+.burger-2 {
+    width: 40%;
 }
