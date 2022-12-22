@@ -98,8 +98,7 @@ class RestaurantManager {
         this.populateHeader();
         this.populateFooter();
         
-        //this.switchHome();
-        this.switchMenu();
+        this.switchHome();
     }
     
     constructor() {
