@@ -20,10 +20,6 @@ export default function populateHome(content) {
     backgroundTitle.classList.add('fade-in');
     backgroundTitle.style.animationDuration = '0.7s';
     
-    /*backgroundDesc.textContent = "At Burger John we bring you the very best burgers John has ever made! Alas, not so many that we cannot\
-    count on our hands. Or hand. Nevertheless, we focus wholly on nothing but quality at Burger John! Each single burger is as good as\
-    two dozen burgers at any of our competitors! We guarantee it.*";*/
-    
     backgroundDesc[0] = document.createElement('p');
     backgroundDesc[0].textContent = "At Burger John we bring you the very best burgers John has ever made! Alas, not so many that we cannot\
     count on our hands. Or hand.";
